@@ -25,6 +25,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import aiohttp
 import requests
 from colorama import Fore, Back, Style
+# haha funny i dont know how to import only necessary modules so here's a 27 line import for no reason LMFAO
 clear = lambda: os.system('cls')
 # Set the path to the Chrome driver executable
 driver_path = 'C:/chromedriver-win64/chromedriver.exe'
@@ -33,18 +34,13 @@ cService = webdriver.ChromeService(executable_path='C:/chromedriver-win64/chrome
 service = Service('C:\Program Files\Chrome Driver\chromedriver.exe')
 options = webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
-options.add_argument('--lang=en')  # Set language to English
+options.add_argument('--lang=en')
 options.add_argument("--disable-blink-features=AutomationControlled") 
- 
-# Exclude the collection of enable-automation switches 
 options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
- 
-# Turn-off userAutomationExtension 
 options.add_experimental_option("useAutomationExtension", False) 
-# Set the user agent in Chrome options
 driver = webdriver.Chrome(service=cService, options=options)
 
-   
+webhook_url = 'Webhook URL'
 
 print(Fore.RED + r"""
  ____  __   __ _   _   ____ __        __   _     ____   _____ 
@@ -55,7 +51,7 @@ print(Fore.RED + r"""
                                                                
     """)
 print(Style.RESET_ALL)
-print(Fore.GREEN + "LIL UZI CLAIMS HT3N BROKE EVERYTHING WITH \" V2 \"")
+print(Fore.GREEN + "I do not fucking know how to python")
 print(Fore.GREEN + " ")
 print(Fore.GREEN + " ")
 print(Fore.LIGHTCYAN_EX + "[XGPC Redeemer]")
@@ -158,25 +154,30 @@ def generateAccount():
  sleep(2)
  button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="inline-continue-control"]')))
  button.click()
-
+ print(Fore.YELLOW + '+ Account created ' + email1 + '@outlook.com:' + password1)
  sleep(3)
+
 
 start = input("Type 'start' to begin checking codes: ")
 if start == 'start':
         generateAccount()
-        print(Fore.YELLOW + '+ Account created ' + email1 + '@outlook.com:' + password1)
+        
                     
         # List of codes to check
-        codes = ["65e2da52-0f96-4c77-8e90-923ceb07bf30","6728730f-31b3-4daf-87d2-bbb271206094","55f79d33-0c02-43a7-a4e9-4e0a4f923a71","4a3c0e63-1ae2-41bf-b474-e3bdfa4f42e4"]
+        codes = []
+        with open('codes.txt', 'r') as file:
+            for line in file:
+                code = line.strip()
+                codes.append(code)
         valid_count = 0
         invalid_count = 0
 
         for code in codes:
             
             url = f'https://www.xbox.com/en-US/xbox-game-pass/invite-your-friends/redeem?offerId={code}' 
-            # Refresh the page with the new URL
+           
             driver.get(url)
-            # Rest of the code...
+           
             sleep(4)
             page_source2 = re.sub(r'<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>', '', driver.page_source)
             
@@ -186,24 +187,16 @@ if start == 'start':
                 payload = {
                             'content': f'Code {code} is eligible'
                         }
-                webhook_url = 'https://discord.com/api/webhooks/1253317027297497188/pDZkvo3ojzx3X3Gu_H_KtBXwMQlShhU_NfMdJVpjntgV25ZkcjpgJXRI9S5HltD3rVna'
+                
                 response = requests.post(webhook_url, json=payload)
                 valid_count += 1
-                # Find the button with text "REDEEM NOW"
                 redeem_button = driver.find_element(By.XPATH, "//button[text()='REDEEM NOW']")
-
-                # Click the button
                 redeem_button.click()
-                
-                
                 sleep(3)
                 WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it((By.NAME ,'redeem-sdk-hosted-iframe')))
-                
                 element = driver.find_element(By.XPATH, "//button[text()='Get Started! Add a way to pay.']")
                 element.click()
-                
                 WebDriverWait(driver, 2000).until(EC.presence_of_element_located((By.ID, 'displayId_credit_card_visa_amex_mc_discover')))
-
                 credit_card = driver.find_element(By.ID,"displayId_credit_card_visa_amex_mc_discover")
                 credit_card.click()
 
@@ -224,13 +217,12 @@ if start == 'start':
                  account_token.send_keys(cc_info[0])
                  name = driver.find_element(By.ID,"accountHolderName")
                  name.click()
-                 name.send_keys('Melissa')
+                 name.send_keys('Alex')
                  expiry_month = driver.find_element(By.ID, "input_expiryMonth")
                  
                  expiry_month.send_keys(cc_date1)
 
                  expiry_year = driver.find_element(By.ID, "input_expiryYear")
-                 # howtogetfreerobux1
                  expiry_year.send_keys('27')
 
                  cvv = driver.find_element(By.ID,"cvvToken")
@@ -312,7 +304,8 @@ if start == 'start':
                 driver.delete_all_cookies()
                 sleep(1)
                 generateAccount()
-            
+                # pls god strike this nigga down
+                
            
                 
 
