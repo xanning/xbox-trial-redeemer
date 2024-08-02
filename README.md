@@ -37,6 +37,7 @@ If you want to, make pull requests, i'll maybe merge just for user sake. Forking
 
 I *will* fork and modify this so it doesn't create outlooks, just waits for you to login with one, and make it more user friendly *at some point*
 
+[Cheap private alts (as cheap as 10 cents/unbanned)](https://discord.gg/JXR8HYNMuV)
 
 ![image](https://github.com/user-attachments/assets/7fbf3cf0-89a0-4f8d-80b3-7399c5d194d4)
 ![image](https://github.com/user-attachments/assets/26e2131f-d088-42ac-b691-8a5cbbea77ef)
