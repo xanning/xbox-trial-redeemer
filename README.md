@@ -15,6 +15,8 @@ If any error modal happens after clicking final redeem button, it doesnt know wh
 
 Waiting systems are on sleep functions. all modified according to my internet speed.
 
+Anything unexpected happens? Woops, it'll crash 
+
 
 # How to use
 Install the requirements (I dont know what those are, look at the imports and figure it out)
