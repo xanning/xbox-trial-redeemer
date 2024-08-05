@@ -1,6 +1,11 @@
 # xbox-trial-redeemer
 Redeems XGPC codes in Selenium. Holy shit??? IS THIS EVEN CODEABLE?!?!?!??!
 
+# Warning:
+
+I deprecated this. Consider using the one with XAG support
+https://github.com/xanning/trial-redeemer-xag-support/
+
 # Buggy
 Yeah, this is made in Selenium for me to only use. I am quitting making alts or community even so here's the code.
 
