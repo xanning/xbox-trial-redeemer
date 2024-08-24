@@ -1,11 +1,11 @@
-# I am termed, and i'll be never coming back to these things.
+# I am termed.
 
 # xbox-trial-redeemer
 Redeems XGPC codes in Selenium. Holy shit??? IS THIS EVEN CODEABLE?!?!?!??!
 
 # Warning:
 
-I deprecated this. Consider using the one with XAG support
+I deprecated this. I wont fix any bugs on this. Consider using the one with XAG support
 https://github.com/xanning/trial-redeemer-xag-support/
 
 # Buggy
